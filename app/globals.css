@@ -45,6 +45,18 @@ img {
   isolation: isolate;
 }
 
+.homeHero {
+  min-height: 82svh;
+}
+
+.teamHero {
+  min-height: 74svh;
+}
+
+.teamHeroImage {
+  object-position: 74% 24%;
+}
+
 .heroImage {
   position: absolute;
   inset: 0;
@@ -87,7 +99,9 @@ img {
 .brand:focus-visible,
 .navLinks a:focus-visible,
 .button:focus-visible,
-.contactPanel a:focus-visible {
+.contactPanel a:focus-visible,
+.serviceRow summary:focus-visible,
+.serviceDetail a:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 4px;
 }
@@ -242,6 +256,108 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
+.serviceList {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.serviceRow {
+  border-bottom: 1px solid var(--line);
+  transition: color 180ms ease;
+}
+
+.serviceRow summary {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 88px;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.serviceRow summary::-webkit-details-marker {
+  display: none;
+}
+
+.serviceRow summary::after {
+  content: "+";
+  display: inline-grid;
+  grid-column: 2;
+  grid-row: 1;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  color: var(--orange);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.serviceRow summary:hover {
+  padding-left: 12px;
+  color: var(--orange);
+}
+
+.serviceRow[open] summary {
+  color: var(--orange);
+}
+
+.serviceRow[open] summary::after {
+  background: var(--orange);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+
+.serviceRow span {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 1;
+}
+
+.serviceRow small {
+  grid-column: 3;
+  justify-self: end;
+  color: var(--steel);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.serviceDetail {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 0 0 28px clamp(0px, 7vw, 96px);
+  animation: serviceDetailIn 220ms ease both;
+}
+
+.serviceDetail p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+  line-height: 1.5;
+}
+
+.serviceDetail a {
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.serviceDetail a:hover {
+  color: var(--ink);
+}
+
 .service {
   min-height: 260px;
   padding: 28px 28px 28px 0;
@@ -263,7 +379,9 @@ h3 {
 
 .service p,
 .muted,
-.proofText p {
+.proofText p,
+.approachStack p,
+.featuredService p {
   color: var(--ink-2);
   font-size: 1.08rem;
   line-height: 1.55;
@@ -308,6 +426,23 @@ h3 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.approachStack {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.approachStack article {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.approachStack h3 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+  font-weight: 400;
 }
 
 .proof {
@@ -371,6 +506,39 @@ h3 {
   font-weight: 800;
 }
 
+.teamSection {
+  padding-bottom: clamp(58px, 8vw, 96px);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.teamPortrait {
+  position: relative;
+  min-height: clamp(420px, 48vw, 640px);
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.teamPortrait img {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(420px, 48vw, 640px);
+  object-fit: cover;
+  object-position: center 22%;
+  filter: saturate(0.94) contrast(1.02);
+  transition: transform 600ms ease, filter 600ms ease;
+}
+
+.teamPortrait:hover img {
+  filter: saturate(1.04) contrast(1.02);
+  transform: scale(1.035);
+}
+
 .contact {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -411,6 +579,34 @@ h3 {
   line-height: 1.5;
 }
 
+.featuredService {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.featuredServiceInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 36px;
+  align-items: end;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(66px, 9vw, 112px) 0;
+}
+
+.featuredService h2 {
+  max-width: 760px;
+}
+
+.featuredService p:not(.eyebrow) {
+  max-width: 620px;
+}
+
+.featuredService .button.primary {
+  color: var(--white);
+}
+
 @keyframes contentIn {
   from {
     opacity: 0;
@@ -425,6 +621,17 @@ h3 {
 @keyframes slowLift {
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes serviceDetailIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -453,12 +660,14 @@ h3 {
   .sectionHeader,
   .split,
   .proof,
+  .featuredServiceInner,
   .contact {
     grid-template-columns: 1fr;
   }
 
   .serviceGrid,
-  .fieldStrip {
+  .fieldStrip,
+  .teamGrid {
     grid-template-columns: 1fr;
   }
 
@@ -470,8 +679,14 @@ h3 {
   }
 
   .fieldStrip figure,
-  .fieldStrip img {
+  .fieldStrip img,
+  .teamPortrait,
+  .teamPortrait img {
     min-height: 320px;
+  }
+
+  .teamHeroImage {
+    object-position: 56% 20%;
   }
 
   .contactPanel a {
@@ -485,5 +700,31 @@ h3 {
 
   .timeline p {
     font-size: 1.08rem;
+  }
+
+  .serviceRow summary {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .serviceRow summary::after {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: end;
+  }
+
+  .serviceRow small {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .serviceDetail {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-left: 0;
+  }
+
+  .serviceDetail a {
+    white-space: normal;
   }
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { DevAgentation } from "./dev-agentation";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tap Plans | LRG Engineering",
+  title: "LRG Engineering | Civil Engineering in Austin",
   description:
-    "City of Austin-compliant water and wastewater tap plans from LRG Engineering.",
+    "Full-service civil engineering, planning, permitting, site plan, and utility design services for private clients in the Greater Austin Area.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {process.env.NODE_ENV === "development" && <DevAgentation />}
+      </body>
     </html>
   );
 }
