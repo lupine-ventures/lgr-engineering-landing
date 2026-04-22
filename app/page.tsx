@@ -1,8 +1,7 @@
 const skylineHero =
-  "https://images.unsplash.com/photo-1666969565832-b55bf42a900d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=3000";
+  "https://images.unsplash.com/photo-1557335200-a65f7f032602?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=3000";
 
-const logo =
-  "https://images.squarespace-cdn.com/content/v1/67ba28a272ed484a70709855/327dcb00-5664-4b55-9124-a639a9016764/LRG+Logo+Email+%26+Invoices.png?format=1000w";
+const logo = "/lrg-logo-blanconegro.png";
 
 const services = [
   {
@@ -85,6 +84,12 @@ const approach = [
   },
 ];
 
+const aboutHighlights = [
+  "Private development and owner-led projects",
+  "Greater Austin review and permitting context",
+  "Direct guidance from Luis R. Granillo, P.E.",
+];
+
 export default function Home() {
   return (
     <main>
@@ -97,10 +102,23 @@ export default function Home() {
           </a>
           <div className="navLinks">
             <a href="#services">Services</a>
-            <a href="/tap-plans">Tap Plans</a>
+            <a href="#about">About</a>
             <a href="/team">Team</a>
             <a href="#contact">Contact</a>
           </div>
+          <details className="mobileMenu">
+            <summary aria-label="Open navigation menu">
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </summary>
+            <div className="mobileMenuLinks">
+              <a href="#services">Services</a>
+              <a href="#about">About</a>
+              <a href="/team">Team</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </details>
         </nav>
 
         <div className="heroContent" id="top">
@@ -127,10 +145,31 @@ export default function Home() {
         <span>TBPE Firm # F-24758</span>
       </section>
 
+      <section className="section aboutSummary" id="about" aria-labelledby="about-summary-title">
+        <div className="aboutSummaryHeader">
+          <p className="eyebrow">About LRG Engineering</p>
+          <h2 id="about-summary-title">
+            Local civil engineering guidance before the site decisions get expensive.
+          </h2>
+        </div>
+        <div className="aboutSummaryBody">
+          <p>
+            LRG helps owners, builders, developers, and consultants understand
+            site constraints early, then turns those decisions into coordinated
+            civil plans, permitting documents, and review responses.
+          </p>
+          <ul>
+            {aboutHighlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+          <a href="/team">Meet the team</a>
+        </div>
+      </section>
+
       <section className="section services" id="services">
         <div className="sectionHeader">
           <p className="eyebrow">Services</p>
-          <h2>Design and permitting support from early feasibility through plan approval.</h2>
         </div>
         <div className="serviceList">
           {services.map((service) => (

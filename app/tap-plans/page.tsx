@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 const planHero =
   "https://images.squarespace-cdn.com/content/v1/67ba28a272ed484a70709855/9860e7e0-b0b6-4188-9687-90f9e20b3f60/2304+W+8th+St+Tap+Plan+AW+Approved+2024+104396.jpg?format=2500w";
 
-const logo =
-  "https://images.squarespace-cdn.com/content/v1/67ba28a272ed484a70709855/327dcb00-5664-4b55-9124-a639a9016764/LRG+Logo+Email+%26+Invoices.png?format=1000w";
+const logo = "/lrg-logo-blanconegro.png";
 
 const diagram =
   "https://images.squarespace-cdn.com/content/v1/67ba28a272ed484a70709855/545b3109-992c-4944-aab8-ad4108461335/Austin+Water+Diagram.png?format=1500w";
@@ -66,9 +65,25 @@ export default function TapPlans() {
             <a href="/">Home</a>
             <a href="#services">Services</a>
             <a href="#process">Process</a>
+            <a href="/#about">About</a>
             <a href="/team">Team</a>
             <a href="#contact">Contact</a>
           </div>
+          <details className="mobileMenu">
+            <summary aria-label="Open navigation menu">
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </summary>
+            <div className="mobileMenuLinks">
+              <a href="/">Home</a>
+              <a href="#services">Services</a>
+              <a href="#process">Process</a>
+              <a href="/#about">About</a>
+              <a href="/team">Team</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </details>
         </nav>
 
         <div className="heroContent" id="top">

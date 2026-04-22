@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-const logo =
-  "https://images.squarespace-cdn.com/content/v1/67ba28a272ed484a70709855/327dcb00-5664-4b55-9124-a639a9016764/LRG+Logo+Email+%26+Invoices.png?format=1000w";
+const logo = "/lrg-logo-blanconegro.png";
 
 const team = [
   {
@@ -37,10 +36,26 @@ export default function TeamPage() {
           <div className="navLinks">
             <a href="/">Home</a>
             <a href="/#services">Services</a>
+            <a href="/#about">About</a>
             <a href="/tap-plans">Tap Plans</a>
             <a href="#top">Team</a>
             <a href="#contact">Contact</a>
           </div>
+          <details className="mobileMenu">
+            <summary aria-label="Open navigation menu">
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </summary>
+            <div className="mobileMenuLinks">
+              <a href="/">Home</a>
+              <a href="/#services">Services</a>
+              <a href="/#about">About</a>
+              <a href="/tap-plans">Tap Plans</a>
+              <a href="#top">Team</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </details>
         </nav>
 
         <div className="heroContent" id="top">
