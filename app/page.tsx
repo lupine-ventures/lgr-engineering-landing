@@ -37,7 +37,7 @@ const services = [
     description:
       "Dedicated Austin-area tap plan support with utility details, field conditions, and plan documentation organized for the approval process.",
     href: "/tap-plans",
-    action: "View specialty page",
+    action: "More info",
   },
   {
     title: "Drainage and Water Quality Plans",
@@ -80,105 +80,111 @@ const approach = [
   },
   {
     title: "Direct professional guidance",
-    body: "Luis R. Granillo, P.E. leads the work with a practical eye for site constraints, sequencing, and jurisdiction requirements.",
+    body: "Every project gets practical engineering direction around site constraints, sequencing, and jurisdiction requirements.",
   },
 ];
 
 const aboutHighlights = [
-  "Private development and owner-led projects",
-  "Greater Austin review and permitting context",
-  "Direct guidance from Luis R. Granillo, P.E.",
+  "Your first call for smarter site development.",
+  "Bridging the gap between a vision and a viable site.",
+  "Clear engineering direction for complex site decisions.",
+  "Local expertise for a smoother path to permit.",
 ];
 
 export default function Home() {
   return (
     <main>
-      <section className="hero homeHero" aria-label="LRG Engineering civil engineering">
-        <img className="heroImage" src={skylineHero} alt="" />
-        <div className="heroShade" />
-        <nav className="nav" aria-label="Primary navigation">
-          <a className="brand" href="#top" aria-label="LRG Engineering home">
-            <img src={logo} alt="LRG Engineering" />
+      <section
+        className='hero homeHero'
+        aria-label='LRG Engineering civil engineering'
+      >
+        <img className='heroImage' src={skylineHero} alt='' />
+        <div className='heroShade' />
+        <nav className='nav' aria-label='Primary navigation'>
+          <a className='brand' href='#top' aria-label='LRG Engineering home'>
+            <img src={logo} alt='LRG Engineering' />
           </a>
-          <div className="navLinks">
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="/team">Team</a>
-            <a href="#contact">Contact</a>
+          <div className='navLinks'>
+            <a href='#services'>Services</a>
+            <a href='#about'>About</a>
+            <a href='/team'>Team</a>
+            <a href='#contact'>Contact</a>
           </div>
-          <details className="mobileMenu">
-            <summary aria-label="Open navigation menu">
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
+          <details className='mobileMenu'>
+            <summary aria-label='Open navigation menu'>
+              <span aria-hidden='true' />
+              <span aria-hidden='true' />
+              <span aria-hidden='true' />
             </summary>
-            <div className="mobileMenuLinks">
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
-              <a href="/team">Team</a>
-              <a href="#contact">Contact</a>
+            <div className='mobileMenuLinks'>
+              <a href='#services'>Services</a>
+              <a href='#about'>About</a>
+              <a href='/team'>Team</a>
+              <a href='#contact'>Contact</a>
             </div>
           </details>
         </nav>
 
-        <div className="heroContent" id="top">
-          <p className="eyebrow">Civil engineering in Greater Austin</p>
-          <h1>Full-service civil engineering for private projects in Central Texas.</h1>
-          <p className="heroCopy">
+        <div className='heroContent' id='top'>
+          <p className='eyebrow'>Civil engineering in Greater Austin</p>
+          <h1>Full-service civil engineering in Central Texas.</h1>
+          <p className='heroCopy'>
             LRG Engineering provides design, planning, permitting, and utility
-            engineering support with the direct attention of a local professional
-            engineer.
+            engineering support with the direct attention of local professional
+            engineers.
           </p>
-          <div className="heroActions">
-            <a className="button primary" href="mailto:luis@lrgengineering.com">
-              Email Luis
+          <div className='heroActions'>
+            <a className='button primary' href='mailto:info@lrgengineering.com'>
+              Email Us
             </a>
-            <a className="button secondary" href="tel:+15127674181">
+            <a className='button secondary' href='tel:+15127674181'>
               Call 512.767.4181
             </a>
           </div>
         </div>
       </section>
 
-      <section className="intro" aria-label="Firm registration">
+      <section className='intro' aria-label='Firm registration'>
         <p>LRG Engineering, LLC</p>
         <span>TBPE Firm # F-24758</span>
       </section>
 
-      <section className="section aboutSummary" id="about" aria-labelledby="about-summary-title">
-        <div className="aboutSummaryHeader">
-          <p className="eyebrow">About LRG Engineering</p>
-          <h2 id="about-summary-title">
-            Local civil engineering guidance before the site decisions get expensive.
+      <section
+        className='section aboutSummary'
+        id='about'
+        aria-labelledby='about-summary-title'
+      >
+        <div className='aboutSummaryHeader'>
+          <h2 id='about-summary-title'>
+            Hands-on permit guidance for Austin-area site development.
           </h2>
         </div>
-        <div className="aboutSummaryBody">
-          <p>
-            LRG helps owners, builders, developers, and consultants understand
-            site constraints early, then turns those decisions into coordinated
-            civil plans, permitting documents, and review responses.
+        <div className='aboutSummaryBody'>
+          <p className='aboutSummaryLead'>
+            We specialize in guiding projects through the City of Austin and
+            surrounding jurisdictions&rsquo; permitting processes, providing
+            hands-on support with site plan review and multi-agency coordination
+            to move projects from concept to approval efficiently.
           </p>
-          <ul>
+          <ul className='aboutSummaryList'>
             {aboutHighlights.map((highlight) => (
               <li key={highlight}>{highlight}</li>
             ))}
           </ul>
-          <a href="/team">Meet the team</a>
         </div>
       </section>
 
-      <section className="section services" id="services">
-        <div className="sectionHeader">
-          <p className="eyebrow">Services</p>
+      <section className='section services' id='services'>
+        <div className='sectionHeader'>
+          <p className='eyebrow'>Services</p>
         </div>
-        <div className="serviceList">
+        <div className='serviceList'>
           {services.map((service) => (
-            <details className="serviceRow" key={service.title}>
+            <details className='serviceRow' key={service.title}>
               <summary>
                 <span>{service.title}</span>
-                <small>Expand service</small>
               </summary>
-              <div className="serviceDetail">
+              <div className='serviceDetail'>
                 <p>{service.description}</p>
                 <a href={service.href}>{service.action}</a>
               </div>
@@ -187,17 +193,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="split section" aria-label="LRG Engineering approach">
+      <section className='split section' aria-label='LRG Engineering approach'>
         <div>
-          <p className="eyebrow">How LRG works</p>
-          <h2>Practical civil engineering with exceptional service and support.</h2>
-          <p className="muted">
+          <h2>
+            Practical civil engineering with exceptional service and support.
+          </h2>
+          <p className='muted'>
             From predevelopment questions to detailed civil plan sets, LRG helps
             clients understand constraints, coordinate requirements, and keep
             projects moving through the local approval path.
           </p>
         </div>
-        <div className="approachStack">
+        <div className='approachStack'>
           {approach.map((item) => (
             <article key={item.title}>
               <h3>{item.title}</h3>
@@ -207,33 +214,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="featuredService" aria-label="Water and wastewater tap plans">
-        <div className="featuredServiceInner">
-          <div>
-            <p className="eyebrow">Specialty service</p>
-            <h2>Water and wastewater tap plans for Austin projects.</h2>
-            <p>
-              The Tap Plan material now lives inside this site as a focused page
-              with field photos, Austin Water detail context, and the dedicated
-              tap-plan process.
-            </p>
-          </div>
-          <a className="button primary" href="/tap-plans">
-            View Tap Plans
-          </a>
-        </div>
-      </section>
-
-      <section className="contact" id="contact">
+      <section className='contact' id='contact'>
         <div>
-          <p className="eyebrow">Contact</p>
+          <p className='eyebrow'>Contact</p>
           <h2>Talk through the site, scope, and next approval step.</h2>
         </div>
-        <div className="contactPanel">
-          <p>Luis R. Granillo, P.E.</p>
-          <a href="mailto:luis@lrgengineering.com">luis@lrgengineering.com</a>
-          <a href="tel:+15127674181">(512) 767-4181</a>
-          <p>2204 Western Trails Blvd, Suite 101<br />Austin, TX 78745</p>
+        <div className='contactPanel'>
+          <div className='contactActions'>
+            <a className='button primary' href='mailto:info@lrgengineering.com'>
+              Email Us
+            </a>
+            <a className='button secondary' href='tel:+15127674181'>
+              Call 512.767.4181
+            </a>
+          </div>
+          <p>
+            6000 Menchaca Rd
+            <br />
+            Building 1, Suite 11
+            <br />
+            Austin, TX 78745
+          </p>
         </div>
       </section>
     </main>

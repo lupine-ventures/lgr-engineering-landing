@@ -26,81 +26,95 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <main>
-      <section className="hero teamHero" aria-label="LRG Engineering team">
-        <img className="heroImage teamHeroImage" src="/team/team-03.jpg" alt="" />
-        <div className="heroShade" />
-        <nav className="nav" aria-label="Primary navigation">
-          <a className="brand" href="/" aria-label="LRG Engineering home">
-            <img src={logo} alt="LRG Engineering" />
+      <section className='hero teamHero' aria-label='LRG Engineering team'>
+        <img
+          className='heroImage teamHeroImage'
+          src='/team/team-03.jpg'
+          alt=''
+        />
+        <div className='heroShade' />
+        <nav className='nav' aria-label='Primary navigation'>
+          <a className='brand' href='/' aria-label='LRG Engineering home'>
+            <img src={logo} alt='LRG Engineering' />
           </a>
-          <div className="navLinks">
-            <a href="/">Home</a>
-            <a href="/#services">Services</a>
-            <a href="/#about">About</a>
-            <a href="/tap-plans">Tap Plans</a>
-            <a href="#top">Team</a>
-            <a href="#contact">Contact</a>
+          <div className='navLinks'>
+            <a href='/'>Home</a>
+            <a href='/#services'>Services</a>
+            <a href='/#about'>About</a>
+            <a href='/tap-plans'>Tap Plans</a>
+            <a href='#top'>Team</a>
+            <a href='#contact'>Contact</a>
           </div>
-          <details className="mobileMenu">
-            <summary aria-label="Open navigation menu">
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
+          <details className='mobileMenu'>
+            <summary aria-label='Open navigation menu'>
+              <span aria-hidden='true' />
+              <span aria-hidden='true' />
+              <span aria-hidden='true' />
             </summary>
-            <div className="mobileMenuLinks">
-              <a href="/">Home</a>
-              <a href="/#services">Services</a>
-              <a href="/#about">About</a>
-              <a href="/tap-plans">Tap Plans</a>
-              <a href="#top">Team</a>
-              <a href="#contact">Contact</a>
+            <div className='mobileMenuLinks'>
+              <a href='/'>Home</a>
+              <a href='/#services'>Services</a>
+              <a href='/#about'>About</a>
+              <a href='/tap-plans'>Tap Plans</a>
+              <a href='#top'>Team</a>
+              <a href='#contact'>Contact</a>
             </div>
           </details>
         </nav>
 
-        <div className="heroContent" id="top">
-          <p className="eyebrow">Team</p>
+        <div className='heroContent' id='top'>
+          <p className='eyebrow'>Team</p>
           <h1>The people behind LRG Engineering.</h1>
-          <p className="heroCopy">
+          <p className='heroCopy'>
             A focused Austin civil engineering team helping private clients move
             from early site questions to coordinated plan approval.
           </p>
-          <div className="heroActions">
-            <a className="button primary" href="mailto:luis@lrgengineering.com">
+          <div className='heroActions'>
+            <a className='button primary' href='mailto:luis@lrgengineering.com'>
               Email the team
             </a>
-            <a className="button secondary" href="tel:+15127674181">
+            <a className='button secondary' href='tel:+15127674181'>
               Call 512.767.4181
             </a>
           </div>
         </div>
       </section>
 
-      <section className="intro" aria-label="Team focus">
+      <section className='intro' aria-label='Team focus'>
         <p>Local engineering support with direct project attention.</p>
-        <span>Planning, civil design, permitting, and review coordination.</span>
+        <span>
+          Planning, civil design, permitting, and review coordination.
+        </span>
       </section>
 
-      <section className="section teamSection" aria-label="LRG Engineering portraits">
-        <div className="sectionHeader">
-          <p className="eyebrow">Meet LRG</p>
-          <h2>A small team built for practical answers and steady execution.</h2>
+      <section
+        className='section teamSection'
+        aria-label='LRG Engineering portraits'
+      >
+        <div className='sectionHeader'>
+          <p className='eyebrow'>Meet LRG</p>
+          <h2>
+            A small team built for practical answers and steady execution.
+          </h2>
         </div>
-        <div className="teamGrid">
+        <div className='teamGrid'>
           {team.map((member) => (
-            <figure className="teamPortrait" key={member.src}>
+            <figure className='teamPortrait' key={member.src}>
               <img src={member.src} alt={member.alt} />
             </figure>
           ))}
         </div>
       </section>
 
-      <section className="split section" aria-label="LRG Engineering team approach">
+      <section
+        className='split section'
+        aria-label='LRG Engineering team approach'
+      >
         <div>
-          <p className="eyebrow">Working style</p>
+          <p className='eyebrow'>Working style</p>
           <h2>Clear communication from feasibility through approval.</h2>
         </div>
-        <div className="approachStack">
+        <div className='approachStack'>
           <article>
             <h3>Site-first thinking</h3>
             <p>
@@ -125,17 +139,27 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
+      <section className='contact' id='contact'>
         <div>
-          <p className="eyebrow">Contact</p>
-          <h2>Bring the site, schedule, and questions. LRG will help sort the path.</h2>
+          <p className='eyebrow'>Contact</p>
+          <h2>
+            Bring the site, schedule, and questions. LRG will help sort the
+            path.
+          </h2>
         </div>
-        <div className="contactPanel">
-          <p>Luis R. Granillo, P.E.</p>
-          <a href="mailto:luis@lrgengineering.com">luis@lrgengineering.com</a>
-          <a href="tel:+15127674181">(512) 767-4181</a>
+        <div className='contactPanel'>
+          <div className='contactActions'>
+            <a className='button primary' href='mailto:info@lrgengineering.com'>
+              Email Us
+            </a>
+            <a className='button secondary' href='tel:+15127674181'>
+              Call 512.767.4181
+            </a>
+          </div>
           <p>
-            2204 Western Trails Blvd, Suite 101
+            6000 Menchaca Rd
+            <br />
+            Building 1, Suite 11
             <br />
             Austin, TX 78745
           </p>

@@ -109,7 +109,7 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: 210px;
+  width: 273px;
   padding: 0;
   background: transparent;
 }
@@ -236,7 +236,12 @@ img {
 }
 
 .homeHero .eyebrow {
-  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  font-size: clamp(1.2rem, 1.43vw, 1.37rem);
+  line-height: 1.2;
+}
+
+.tapPlansHero .eyebrow {
+  font-size: clamp(1.2rem, 1.43vw, 1.37rem);
   line-height: 1.2;
 }
 
@@ -360,33 +365,40 @@ h3 {
 
 .aboutSummary {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: clamp(32px, 7vw, 86px);
-  align-items: start;
-  padding-bottom: clamp(58px, 8vw, 92px);
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(34px, 7vw, 92px);
+  align-items: center;
+  padding-top: clamp(76px, 10vw, 116px);
+  padding-bottom: clamp(66px, 9vw, 108px);
   border-bottom: 1px solid var(--line);
 }
 
 .aboutSummary h2 {
   margin-bottom: 0;
-  font-size: clamp(2.35rem, 4.8vw, 5.4rem);
+  max-width: 680px;
+  font-size: clamp(2.55rem, 4.9vw, 5.5rem);
 }
 
 .aboutSummaryBody {
   display: grid;
-  gap: 26px;
-  padding-top: 8px;
+  gap: clamp(26px, 4vw, 38px);
+  padding-top: 12px;
 }
 
 .aboutSummaryBody p {
   max-width: 660px;
   margin: 0;
   color: var(--ink-2);
-  font-size: clamp(1.18rem, 2vw, 1.55rem);
-  line-height: 1.5;
+  font-size: clamp(1.16rem, 1.55vw, 1.38rem);
+  line-height: 1.62;
 }
 
-.aboutSummaryBody ul {
+.aboutSummaryLead {
+  padding-left: clamp(18px, 2vw, 28px);
+  border-left: 4px solid var(--orange);
+}
+
+.aboutSummaryList {
   display: grid;
   gap: 0;
   margin: 0;
@@ -395,12 +407,25 @@ h3 {
   list-style: none;
 }
 
-.aboutSummaryBody li {
-  padding: 15px 0;
+.aboutSummaryList li {
+  position: relative;
+  padding: 17px 0 17px 34px;
   border-bottom: 1px solid var(--line);
   color: var(--ink);
-  font-size: 1.02rem;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
   font-weight: 800;
+  line-height: 1.28;
+}
+
+.aboutSummaryList li::before {
+  position: absolute;
+  top: 1.55em;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  content: "";
 }
 
 .aboutSummaryBody a {
@@ -434,7 +459,7 @@ h3 {
 
 .serviceRow summary {
   display: grid;
-  grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, max-content) auto;
   gap: 18px;
   align-items: center;
   min-height: 88px;
@@ -484,15 +509,6 @@ h3 {
   font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(1.8rem, 3vw, 3.2rem);
   line-height: 1;
-}
-
-.serviceRow small {
-  grid-column: 3;
-  justify-self: end;
-  color: var(--steel);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .serviceDetail {
@@ -546,8 +562,7 @@ h3 {
 .service p,
 .muted,
 .proofText p,
-.approachStack p,
-.featuredService p {
+.approachStack p {
   color: var(--ink-2);
   font-size: 1.08rem;
   line-height: 1.55;
@@ -563,7 +578,6 @@ h3 {
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(36px, 7vw, 96px);
   align-items: start;
-  border-top: 1px solid var(--line);
 }
 
 .timeline {
@@ -709,7 +723,7 @@ h3 {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
-  align-items: start;
+  align-items: center;
   padding: clamp(72px, 10vw, 130px) max(20px, calc((100vw - 1180px) / 2));
   background: var(--ink);
   color: var(--white);
@@ -719,58 +733,35 @@ h3 {
   margin-bottom: 0;
 }
 
+.contact .eyebrow {
+  margin-bottom: 24px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+}
+
 .contactPanel {
   display: grid;
-  gap: 18px;
-  padding-top: 10px;
+  gap: 22px;
   color: rgba(255, 255, 255, 0.78);
   font-size: 1.2rem;
 }
 
-.contactPanel a {
-  color: var(--white);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.15;
-  overflow-wrap: anywhere;
-  transition: color 180ms ease;
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.contactPanel a:hover {
-  color: var(--orange);
+.contactActions .button.secondary {
+  background: transparent;
 }
 
 .contactPanel p {
-  margin: 18px 0 0;
+  margin: 0;
   line-height: 1.5;
-}
-
-.featuredService {
-  background: var(--paper-2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.featuredServiceInner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 36px;
-  align-items: end;
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: clamp(66px, 9vw, 112px) 0;
-}
-
-.featuredService h2 {
-  max-width: 760px;
-}
-
-.featuredService p:not(.eyebrow) {
-  max-width: 620px;
-}
-
-.featuredService .button.primary {
-  color: var(--white);
 }
 
 @keyframes contentIn {
@@ -812,7 +803,7 @@ h3 {
   }
 
   .brand {
-    width: 160px;
+    width: 208px;
     padding: 0;
   }
 
@@ -833,7 +824,6 @@ h3 {
   .aboutSummary,
   .split,
   .proof,
-  .featuredServiceInner,
   .contact {
     grid-template-columns: 1fr;
   }
@@ -862,10 +852,6 @@ h3 {
     object-position: 56% 20%;
   }
 
-  .contactPanel a {
-    font-size: 1.08rem;
-  }
-
   .timeline li {
     grid-template-columns: 1fr;
     gap: 6px;
@@ -884,11 +870,6 @@ h3 {
     grid-column: 2;
     grid-row: 1 / span 2;
     justify-self: end;
-  }
-
-  .serviceRow small {
-    grid-column: 1;
-    justify-self: start;
   }
 
   .serviceDetail {

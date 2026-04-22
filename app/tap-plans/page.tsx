@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 export default function TapPlans() {
   return (
     <main>
-      <section className="hero" aria-label="LRG Engineering tap plans">
+      <section className="hero tapPlansHero" aria-label="LRG Engineering tap plans">
         <img className="heroImage" src={planHero} alt="" />
         <div className="heroShade" />
         <nav className="nav" aria-label="Primary navigation">
@@ -175,9 +175,21 @@ export default function TapPlans() {
           <h2>Send the project address. LRG will help map the next step.</h2>
         </div>
         <div className="contactPanel">
-          <a href="mailto:luis@lrgengineering.com">luis@lrgengineering.com</a>
-          <a href="tel:+15127674181">(512) 767-4181</a>
-          <p>2204 Western Trails Blvd, Suite 101<br />Austin, TX 78745</p>
+          <div className="contactActions">
+            <a className="button primary" href="mailto:luis@lrgengineering.com">
+              Start a tap plan
+            </a>
+            <a className="button secondary" href="tel:+15127674181">
+              Call 512.767.4181
+            </a>
+          </div>
+          <p>
+            6000 Menchaca Rd
+            <br />
+            Building 1, Suite 11
+            <br />
+            Austin, TX 78745
+          </p>
         </div>
       </section>
     </main>
