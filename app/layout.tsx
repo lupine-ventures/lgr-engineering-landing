@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "LRG Engineering | Civil Engineering in Austin",
   description:
     "Full-service civil engineering, planning, permitting, site plan, and utility design services for private clients in the Greater Austin Area.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+  },
 };
 
 export default function RootLayout({
