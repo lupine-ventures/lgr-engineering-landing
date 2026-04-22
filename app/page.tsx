@@ -3,6 +3,24 @@ const skylineHero =
 
 const logo = "/lrg-logo-blanconegro.png";
 
+const team = [
+  {
+    name: "Lauren Rein, P.E.",
+    src: "/team/team-03.jpg",
+    alt: "Lauren Rein, P.E. outdoors in an LRG Engineering shirt",
+  },
+  {
+    name: "Luis R. Granillo, P.E.",
+    src: "/team/team-02.jpg",
+    alt: "Luis R. Granillo, P.E. smiling outdoors",
+  },
+  {
+    name: "David Tapia, E.I.T.",
+    src: "/team/team-01.jpg",
+    alt: "David Tapia, E.I.T. in a black polo outdoors",
+  },
+];
+
 const services = [
   {
     title: "Land Planning",
@@ -107,7 +125,7 @@ export default function Home() {
           <div className='navLinks'>
             <a href='#services'>Services</a>
             <a href='#about'>About</a>
-            <a href='/team'>Team</a>
+            <a href='#team'>Team</a>
             <a href='#contact'>Contact</a>
           </div>
           <details className='mobileMenu'>
@@ -119,7 +137,7 @@ export default function Home() {
             <div className='mobileMenuLinks'>
               <a href='#services'>Services</a>
               <a href='#about'>About</a>
-              <a href='/team'>Team</a>
+              <a href='#team'>Team</a>
               <a href='#contact'>Contact</a>
             </div>
           </details>
@@ -193,7 +211,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='split section' aria-label='LRG Engineering approach'>
+      <section
+        className='split section homeApproach'
+        aria-label='LRG Engineering approach'
+      >
         <div>
           <h2>
             Practical civil engineering with exceptional service and support.
@@ -210,6 +231,36 @@ export default function Home() {
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className='section teamSection homeTeam'
+        id='team'
+        aria-labelledby='home-team-title'
+      >
+        <div className='sectionHeader'>
+          <a className='eyebrow teamHeaderLink' href='/team'>
+            Meet the team
+          </a>
+          <div>
+            <h2 id='home-team-title'>
+              Local engineers close to the details.
+            </h2>
+            <p className='muted'>
+              LRG keeps project guidance direct and practical, with decisions
+              rooted in site conditions, review comments, and Central Texas
+              approval paths.
+            </p>
+          </div>
+        </div>
+        <div className='teamGrid'>
+          {team.map((member) => (
+            <figure className='teamPortrait' key={member.src}>
+              <img src={member.src} alt={member.alt} />
+              <figcaption>{member.name}</figcaption>
+            </figure>
           ))}
         </div>
       </section>

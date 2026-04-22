@@ -4,16 +4,19 @@ const logo = "/lrg-logo-blanconegro.png";
 
 const team = [
   {
-    src: "/team/team-01.jpg",
-    alt: "LRG Engineering team member in a black polo outdoors",
-  },
-  {
-    src: "/team/team-02.jpg",
-    alt: "LRG Engineering team member smiling outdoors",
-  },
-  {
+    name: "Lauren Rein, P.E.",
     src: "/team/team-03.jpg",
-    alt: "LRG Engineering team member in an LRG Engineering shirt outdoors",
+    alt: "Lauren Rein, P.E. outdoors in an LRG Engineering shirt",
+  },
+  {
+    name: "Luis R. Granillo, P.E.",
+    src: "/team/team-02.jpg",
+    alt: "Luis R. Granillo, P.E. smiling outdoors",
+  },
+  {
+    name: "David Tapia, E.I.T.",
+    src: "/team/team-01.jpg",
+    alt: "David Tapia, E.I.T. in a black polo outdoors",
   },
 ];
 
@@ -63,7 +66,6 @@ export default function TeamPage() {
         </nav>
 
         <div className='heroContent' id='top'>
-          <p className='eyebrow'>Team</p>
           <h1>The people behind LRG Engineering.</h1>
           <p className='heroCopy'>
             A focused Austin civil engineering team helping private clients move
@@ -80,11 +82,9 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className='intro' aria-label='Team focus'>
-        <p>Local engineering support with direct project attention.</p>
-        <span>
-          Planning, civil design, permitting, and review coordination.
-        </span>
+      <section className='intro teamIntro' aria-label='Team focus'>
+        <p>Local engineering support, handled closely.</p>
+        <span>Planning / civil design / permitting / review coordination</span>
       </section>
 
       <section
@@ -101,13 +101,14 @@ export default function TeamPage() {
           {team.map((member) => (
             <figure className='teamPortrait' key={member.src}>
               <img src={member.src} alt={member.alt} />
+              <figcaption>{member.name}</figcaption>
             </figure>
           ))}
         </div>
       </section>
 
       <section
-        className='split section'
+        className='split section teamApproach'
         aria-label='LRG Engineering team approach'
       >
         <div>
